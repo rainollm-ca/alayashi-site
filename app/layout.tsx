@@ -5,8 +5,16 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Al Ayashi Specialized Hospital | مستشفى العياشي التخصصي",
-  description: "Al Ayashi Specialized Hospital in Tanta, Egypt - Professional healthcare services",
+  title: "مستشفى وعيادات العياشي التخصصي | Al Ayashi Specialized Hospital & Clinics",
+  description: "مستشفى وعيادات العياشي التخصصي - طنطا، مصر. صحتك وسلامتك في فؤادنا. مفتوح 24 ساعة. Al Ayashi Specialized Hospital & Clinics - Tanta, Egypt. Your health and safety in our hearts. Open 24 hours.",
+  keywords: "مستشفى العياشي, Al Ayashi Hospital, Tanta, Egypt, طنطا, مصر, مستشفى, hospital, emergency, طوارئ",
+  openGraph: {
+    title: "مستشفى وعيادات العياشي التخصصي",
+    description: "صحتك وسلامتك في فؤادنا - مفتوح 24 ساعة",
+    type: "website",
+    locale: "ar_EG",
+    alternateLocale: "en_US",
+  },
 };
 
 export default function RootLayout({
