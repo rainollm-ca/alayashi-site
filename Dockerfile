@@ -16,11 +16,13 @@ COPY . .
 
 RUN npm run build
 
-# Production image, copy all the files and run next
-FROM base AS runner
+# Production image
+FROM node:20-alpine AS runner
 WORKDIR /app
 
-ENV NODE_ENV production
+ENV NODE_ENV=production
+
+RUN npm install -g serve
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
@@ -30,9 +32,6 @@ COPY --from=builder /app/out ./out
 USER nextjs
 
 EXPOSE 3000
+ENV PORT=3000
 
-ENV PORT 3000
-
-# Serve static files
-RUN npm install -g serve
 CMD ["serve", "-s", "out", "-l", "3000"]
