@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Cairo } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const cairo = Cairo({ subsets: ["arabic", "latin"] });
 
 export const metadata: Metadata = {
   title: "مستشفى وعيادات العياشي التخصصي | Al Ayashi Specialized Hospital & Clinics",
@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar">
-      <body className={inter.className}>{children}</body>
+    <html lang="ar" dir="rtl">
+      <body className={cairo.className}>{children}</body>
     </html>
   );
 }
